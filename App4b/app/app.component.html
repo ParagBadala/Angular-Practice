@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+   <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>BOOK ID</th>
+        <th>BOOK TITLE</th>
+        <th>BOOK AUTHOR</th>
+        <th>BOOK YEAR OF PUBLISH</th>
+      </tr>
+      <tr>
+      <td><input type="text" [(ngModel)]='idFilter'/></td>
+      <td><input type="text" [(ngModel)]='titleFilter'></td>
+      <td><input type="text" [(ngModel)]='authorFilter'></td>
+      <td><input type="text" [(ngModel)]='yearFilter'></td>
+    </tr>
+    </thead>
+    <tbody *ngFor="let emp of datalist |productFilter:idFilter|productFilterName:titleFilter|productFilterAuthor:authorFilter|productFilterYear:yearFilter ">
+      <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.title}}</td>
+        <td>{{emp.author}}</td>
+        <td>{{emp.year}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
