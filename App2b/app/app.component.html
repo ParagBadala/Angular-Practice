@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+   <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th (click)="id()">ID</th>
+        <th (click)="name()">NAME</th>
+        <th (click)="sal()">SALARY</th>
+        <th (click)="dep()">DEPARTMENT</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let emp of store">
+      <tr>
+        <td>{{emp.empId}}</td>
+        <td>{{emp.empName}}</td>
+        <td>{{emp.empSal}}</td>
+        <td>{{emp.empDep}}</td>
+      </tr>
+    </tbody>
+  </table>

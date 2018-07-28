@@ -1,0 +1,84 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div class="container">  
+  <div id="main">
+  <h3 style="text-align:center">Form Operation</h3></div>
+  <hr/>
+  <form class="form-horizontal" (ngsubmit)="onSubmit()" #form01 [ngFormOptions]="{updateOn: 'submit'}" >
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT ID </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtId" #id [(ngModel)]='model.pId' #txtId="ngModel" id="Id" placeholder="Enter ID" required >
+        <div [hidden]="txtId.valid || txtId.pristine" class="alert alert-danger">Product Id required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT NAME </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtName" #name [(ngModel)]='model.pName' #txtName="ngModel" id="Name" placeholder="Enter Name" required >
+        <div [hidden]="txtName.valid || txtName.pristine" class="alert alert-danger">Product name required</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT COST </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtCost" #name [(ngModel)]='model.pCost' #txtCost="ngModel" id="Cost" placeholder="Enter Cost" required >
+        <div [hidden]="txtCost.valid || txtCost.pristine" class="alert alert-danger">Product cost required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT ONLINE </label>
+     <label class="radio-inline">
+      <input type="radio" name="optradio" #pOnline [(ngModel)]='model.pOnline' #pOnline="ngModel" id="pOnline" required >Yes
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" #pOnline [(ngModel)]='model.pOnline' #pOnline="ngModel" id="pOnline" required>No
+    </label>
+    </div>
+   
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT CATEGORY </label>
+      <div class="col-sm-3">
+        <select name="txtCategory" #Category [(ngModel)]='model.pCategory' #txtCategory="ngModel" id="Category" placeholder="Enter Category" required >
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+        <div [hidden]="txtCategory.valid || txtCategory.pristine" class="alert alert-danger">Product category must be  required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT CATEGORY </label>
+      <div class="col-sm-8">
+        <label class="checkbox-inline">
+          <input type="checkbox" value="">Big Bazar
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="">DMart
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="">Reliance
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="">Mega store
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-3 col-sm-6">
+          <input type="submit" class="btn btn-primary" value="Submit" />
+      </div>
+    </div>
+  </form>  
+</div>

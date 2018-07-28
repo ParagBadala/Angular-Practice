@@ -1,0 +1,105 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+<div class="container">  
+  <div id="main">
+  <h3 style="text-align:center">Update Operation</h3></div>
+  <hr/>
+  <form class="form-horizontal" action="" >
+    <div class="form-group">
+      <label class="control-label col-sm-3">ID </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtId" #id [(ngModel)]='eId' id="Id" placeholder="Enter ID">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">NAME </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtname" #name [(ngModel)]='eName' id="name" placeholder="Enter NAME">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">SALARY </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtSalary" #sal [(ngModel)]='eSalary' id="Salary" placeholder="Enter Salary">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">DEPARTMENT </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtDepartment" #dep [(ngModel)]='eDepartment' id="Department" placeholder="Enter Department">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-3 col-sm-6">
+          <input type="submit" class="btn btn-primary" value="Add Employee" (click)="onclick(id.value,name.value,sal.value,dep.value);" />
+      </div>
+    </div>
+  </form>  
+   <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SALARY</th>
+        <th>DEPARTMENT</th>
+        <th colspan="2">ACTION</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let emp of store">
+      <tr>
+        <td>{{emp.empId}}</td>
+        <td>{{emp.empName}}</td>
+        <td>{{emp.empSal}}</td>
+        <td>{{emp.empDep}}</td>
+        <td><button (click)="onUpdate(emp.empId)">Update</button></td>
+        <td><button (click)="onRemove(emp.empId)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+   <form class="form-horizontal" action="" >
+    <div class="form-group">
+      <label class="control-label col-sm-3">ID </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtId" #valuea [value]="value1">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">NAME </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtname" #valueb [value]="value2" >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">SALARY </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtSalary" #valuec [value]="value3">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">DEPARTMENT </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtDepartment" #valued [value]="value4">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-3 col-sm-6">
+          <input type="submit" class="btn btn-primary" value="Update Employee" (click)="onChangeData(valuea.value,valueb.value,valuec.value,valued.value);" />
+      </div>
+    </div>
+  </form>  
+
+</div>
+
+

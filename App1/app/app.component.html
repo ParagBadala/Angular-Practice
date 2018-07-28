@@ -1,0 +1,51 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div class="container">  
+  <div id="main">
+  <h3 style="text-align:center">Angular 2 Operation</h3></div>
+  <hr/>
+  <form class="form-horizontal" action="" >
+    <div class="form-group">
+      <label class="control-label col-sm-3">ID </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtId" #id [(ngModel)]='eId' id="Id" placeholder="Enter ID">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">NAME </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtname" #name [(ngModel)]='eName' id="name" placeholder="Enter NAME">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">SALARY </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtSalary" #sal [(ngModel)]='eSalary' id="Salary" placeholder="Enter Salary">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">DEPARTMENT </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtDepartment" #dep [(ngModel)]='eDepartment' id="Department" placeholder="Enter Department">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-3 col-sm-6">
+          <input type="submit" class="btn btn-primary" value="Submit" (click)="onclick(id.value,name.value,sal.value,dep.value);" />
+      </div>
+    </div>
+    <p>{{eId}} {{eName}} {{eSalary}} {{eDepartment}}</p>
+
+
+  </form>  
+</div>
+
