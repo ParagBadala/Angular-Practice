@@ -1,0 +1,154 @@
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <br/>
+    <h3 class="panel-title">Add Movie </h3>
+  </div> 
+  <div class="panel-body">
+    
+    <div class="form-group">
+      <label>Movie Name</label>
+      <input  type="text" class="form-control" formControlName="mname"  title="Only characters and number are allowed" required>
+        {{mnamerequired}}
+    </div>
+    <span class="nameV">
+      <label *ngIf="movieForm.controls['mname'].dirty && !movieForm.controls['mname'].valid">
+        Movie name is should be alphanumeric!!!<br>
+      </label>
+      <label *ngIf="movieForm.controls['mname'].touched && movieForm.controls['mname'].value===''">
+        Movie name is required!!!<br>
+      </label>
+    </span>
+
+    <!--<div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT ID </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtId" id="Id" placeholder="Enter ID" formControlName="pId"  >
+        <div class="alert alert-danger">Product Id required</div>
+      </div>
+    </div>-->
+
+    <div class="form-group">
+      <label>Give Rating</label>
+      <input   type="number" class="form-control" min=0 max=5 formControlName="mrating"  title="Only numbers are allowed" required>
+      {{mratingrequired}}
+    </div>
+    <span class="nameV">
+      <label *ngIf="movieForm.controls['mrating'].dirty && !movieForm.controls['mrating'].valid">
+       Rating needs to be a number: eg:2.5. Rating is on Scale 1-5<br>
+      </label>
+      <label *ngIf="movieForm.controls['mrating'].touched && movieForm.controls['mrating'].value===''">
+        Rating is required!!!<br>
+      </label>
+    </span> 
+
+    <div class="form-group">
+      <label>Select Genre</label>
+      <select id="category" formControlName="mcategory" class="form-control" required>
+        <option value="">Select Genre</option>
+        <option value="Drama">Drama</option>
+        <option value="Fiction">Fiction</option>
+        <option value="Satire">Satire</option>
+      </select>
+      {{mcategoryrequired}}
+    </div>
+    <span class="nameV">
+      <label *ngIf="movieForm.controls['mcategory'].touched && movieForm.controls['mcategory'].value===''">
+        Select Genre!!!<br>
+      </label>
+    </span> 
+
+  </div>
+  <div class="panel-footer" class="form-group">
+    <button type="submit"  class="btn btn-primary">Add Movie</button>
+  </div>
+</div>
+</form>
+
+
+<!--<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div class="container">  
+  <div id="main">
+  <h3 style="text-align:center">Form Operation</h3></div>
+  <hr/>
+  <form class="form-horizontal" [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT ID </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtId" id="Id" placeholder="Enter ID" formControlName="pId"  >
+        <div class="alert alert-danger">Product Id required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT NAME </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtName" id="Name" placeholder="Enter Name" formControlName="pName">
+        <div class="alert alert-danger">Product name required</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT COST </label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="txtCost" id="Cost" placeholder="Enter Cost" formControlName="pCost" >
+        <div class="alert alert-danger">Product cost required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT ONLINE </label>
+     <label class="radio-inline">
+      <input type="radio" name="optradio" id="pOnline" formControlName="pOnline" >Yes
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" id="pOnline" formControlName="pOnline" >No
+    </label>
+    </div>
+   
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT CATEGORY </label>
+      <div class="col-sm-3">
+        <select name="txtCategory" id="Category" placeholder="Enter Category" formControlName="pCategory" >
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+        <div class="alert alert-danger">Product category must be  required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">PRODUCT CATEGORY </label>
+      <div class="col-sm-8">
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" formControlName="pAvaiable">Big Bazar
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" formControlName="pAvaiable">DMart
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" formControlName="pAvaiable">Reliance
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="" formControlName="pAvaiable">Mega store
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-3 col-sm-6">
+          <input type="submit" class="btn btn-primary" value="Submit" />
+      </div>
+    </div>
+  </form>  
+</div>
+
+-->

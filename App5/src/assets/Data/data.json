@@ -1,0 +1,22 @@
+[
+    {
+        "movieCat":"Drama",
+        "movieName":"Home Alone",
+        "rating":4
+    },
+    {
+        "movieCat":"Drama",
+        "movieName":"Horror series",
+        "rating":4
+    },
+    {
+        "movieCat":"Fiction",
+        "movieName":"Iron Man",
+        "rating":4
+    },
+    {
+        "movieCat":"Fiction",
+        "movieName":"Avenger",
+        "rating":4
+    }
+]
